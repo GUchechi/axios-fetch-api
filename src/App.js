@@ -1,8 +1,11 @@
 import './App.css';
 import Axios from 'axios';
+import { useState } from 'react';
 
 function App() {
 
+    const [joke, SetJoke] = useState("")
+    
     const getJoke = () => {
 
       const config = {
@@ -12,7 +15,7 @@ function App() {
     }
 
       Axios.get('https://icanhazdadjoke.com', config).then((response) => {
-        console.log(response.data);
+        console.log(response);
       })
     }
 
