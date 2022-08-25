@@ -5,7 +5,7 @@ import { useState } from 'react';
 function App() {
 
     const [joke, SetJoke] = useState("")
-    
+
     const getJoke = () => {
 
       const config = {
@@ -15,13 +15,14 @@ function App() {
     }
 
       Axios.get('https://icanhazdadjoke.com', config).then((response) => {
-        console.log(response);
+        SetJoke(response.data["joke"]);
       })
     }
 
   return (
     <div className="App">
      Hello Youtube <button onClick={getJoke}>Get Joke</button>
+     {joke}
     </div>
   );
 }
