@@ -15,7 +15,7 @@ function App() {
     }
 
       Axios.get('https://icanhazdadjoke.com', config).then((response) => {
-        SetJoke(response.data["joke"]);
+        SetJoke(response.data["joke"])
       })
     }
 
